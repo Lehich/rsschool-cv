@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CV</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body lang="en">
+    <header>
+        <p id="avatar">
+            <img src="images/avatar.jpg" alt="photo">
+        </p>
+        <br>
+        <h1>Rebkavets Aliaksei</h1>
+
+        <h2>lehichh@gmail.com</h2>
+    </header>
+
+    <h2>Software engineer Responsible for the support and development of logistics software, my functions are:</h2>
+    <ul>
+        <li>analysis and search for solutions to the tasks set by clients;</li>
+        <li>development of new and improvement of existing functionality;</li>
+        <li>development of software product code according to ready-made specifications;</li>
+        <li>formation of internal documentation based on the results of the work;</li>
+        <li>analysis and optimization of the code to improve the quality and performance of the software.</li>
+    </ul>
+
+    <h2>Skills:</h2>
+    <ul>
+        <li>work with a database of languages Vip, SQL;</li>
+        <li>work with version control system (SVN (tortoisesvn client), VSS);</li>
+        <li>development and support of functionality with complex logic in the ERP system.</li>
+    </ul>
+
+    <h2>Code:</h2>
+    <p class="code">
+        <code>
+			@RequestMapping(value = "/clear", method = RequestMethod.POST)<br>
+				public String clearing(HttpServletRequest request, HttpSession session) {<br>
+				public String clearing(@RequestParam String clearTableName,<br>
+									HttpServletRequest request,<br>
+									HttpSession session,<br>
+									Model model) {<br>
+					try {<br>
+						DatabaseManager manager = getManager(session);<br>
+						String clearTableName = request.getParameter("clearTableName");<br>
+						request.setAttribute("findTableName", clearTableName);<br>
+						model.addAttribute("findTableName", clearTableName);<br>
+						service.clear(manager, clearTableName);<br>
+						request.setAttribute("table", service.find(manager, clearTableName));<br>
+						model.addAttribute("table", service.find(manager, clearTableName));<br>
+						return "find";<br>
+					} catch (Exception e) {<br>
+						request.setAttribute("message", e.getMessage());<br>
+						model.addAttribute("message", e.getMessage());<br>
+						return "error";<br>
+					}<br>
+				}<br>
+				@RequestMapping(value = "/create", method = RequestMethod.GET)<br>
+				public String create(HttpSession session) {<br>
+					DatabaseManager manager = getManager(session);<br>
+					if ((manager == DatabaseManager.NULL) || (manager == null)) {<br>
+						session.setAttribute("fromPage", "/create");<br>
+						return "redirect:connect";<br>
+					}<br>
+					return "create";<br>
+				}<br>
+		</code>
+    </p>
+
+    <h2>Knowledge and courses:</h2>
+    <ul>
+        <li>Juja.com: Java Core, JUnit, JDBC, Servlets, JSP, Spring IoC, Spring MVC, PostgreSQL;</li>
+        <li>Streamline: English (elementary A0 - intermediate B1).</li>
+    </ul>
+
+    <footer>
+        <a href="https://github.com/Lehich" title="MY GITHUB">MY GITHUB</a><br><br> &copy; 2021, Rebkavets Aliaksei<br><br>
+        <a href="https://rs.school/js/" title="Click here to go to RSSCHOOL">
+            <img src="https://rs.school/images/rs_school_js.svg" alt="logo" height="50" width="800" />
+        </a>
+    </footer>
+</body>
+
+</html>
