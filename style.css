@@ -1,10 +1,10 @@
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: small;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 0px 5px 0px;
     text-align: center;
     background-color: #dbd9f1;
+    word-wrap: break-word;
 }
 
 h1 {
@@ -19,7 +19,6 @@ h2 {
     margin: 0px 40px 0px 40px;
     background-color: rgb(165, 150, 207);
     text-align: left;
-    word-wrap: break-word
 }
 
 p,
@@ -70,33 +69,35 @@ main {
 }
 
 .contact {
-    width: 24%;
-    padding-left: 20px;
+    word-wrap: normal;
+    width: 20%;
+    padding-right: 20px;
     order: 1;
 }
 
 .main {
-    width: 70%;
-    padding-left: 20px;
+    width: 75%;
     order: 2;
 }
 
 @media only screen and (max-width: 800px) {
     .contact {
-        flex-basis: 25%;
-        height: 75%;
+        flex-basis: 100%;
+        height: 25%;
     }
     .main {
-        height: 100%;
+        flex-basis: 100%;
+        height: 75%;
     }
 }
 
 @media only screen and (max-width: 480px) {
     .contact {
-        flex-basis: 25%;
-        height: 75%;
+        flex-basis: 100%;
+        height: 25%;
     }
     .main {
-        height: 100%;
+        flex-basis: 100%;
+        height: 75%;
     }
 }
