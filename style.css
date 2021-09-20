@@ -1,11 +1,8 @@
 body {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: small;
-    width: 800px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
     text-align: center;
     background-color: #dbd9f1;
 }
@@ -22,6 +19,7 @@ h2 {
     margin: 0px 40px 0px 40px;
     background-color: rgb(165, 150, 207);
     text-align: left;
+    word-wrap: break-word
 }
 
 p,
@@ -52,4 +50,53 @@ footer a:visited {
     color: #b2b2f3;
     text-decoration: none;
     border-bottom: thin dotted #050227;
+}
+
+#gmail {
+    list-style-image: url(images/gmail.png);
+}
+
+#skype {
+    list-style-image: url(images/Skype.png);
+}
+
+#viber {
+    list-style-image: url(images/viber.png);
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact {
+    width: 24%;
+    padding-left: 20px;
+    order: 1;
+}
+
+.main {
+    width: 70%;
+    padding-left: 20px;
+    order: 2;
+}
+
+@media only screen and (max-width: 800px) {
+    .contact {
+        flex-basis: 25%;
+        height: 75%;
+    }
+    .main {
+        height: 100%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .contact {
+        flex-basis: 25%;
+        height: 75%;
+    }
+    .main {
+        height: 100%;
+    }
 }
